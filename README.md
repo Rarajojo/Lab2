@@ -13,7 +13,7 @@ This project combines **YOLOv2**([reference](https://arxiv.org/abs/1506.02640)) 
 
 
 ## Steps to execute
-In order to execute the project, you need to download the code zip and extract it into a folder. Make sure that the Makefile has the following changes:
+In order to execute the project, you need to download the code zip and extract it into a folder. Make sure that the `Makefile` has the following changes:
   - The flags `OPENCV` and `CUDDN` must be deactivated.
       `OPENCV=0`
       `CUDDN=0`
