@@ -13,7 +13,7 @@ This project combines **YOLOv2**([reference](https://arxiv.org/abs/1506.02640)) 
 
 
 ## Code Preparation
-In order to execute the project, you need to download the code zip and extract it into a folder. Make sure that the `Makefile` has the following changes:
+1. In order to execute the project, you need to download the code zip and extract it into a folder. Make sure that the `Makefile` has the following changes:
   - The flags `OPENCV` and `CUDDN` must be deactivated.
       + `OPENCV=0`
       + `CUDDN=0`
@@ -21,16 +21,16 @@ In order to execute the project, you need to download the code zip and extract i
       + `COMMON+= -DGPU -I/usr/local/cuda-10.1/include/`
       + `LDFLAGS+= -L/usr/local/cuda-10.1/lib64 -lcuda -lcudart -lcublas –lcurand`
 
-From the `img2video.py` file the `cv2.destroyAllWindows()` function is commented as `libgtk2.0-dev` will not be installed.
+2. From the `img2video.py` file the `cv2.destroyAllWindows()` function is commented as `libgtk2.0-dev` will not be installed.
 
 ## Steps to execute
 Follow the next steps.
 
-Create a conda enviroment:
+1. Create a conda enviroment:
   - `conda create --name yolo python=2.7`
   - `source activate yolo`
  
-Install the necessary libraries with the following commands:
+2. Install the necessary libraries with the following commands:
   - `conda install -c conda-forge opencv`
   - `conda install -c conda-forge matplotlib`
   - `conda install -c conda-forge tensorflow`
@@ -38,20 +38,20 @@ Install the necessary libraries with the following commands:
   - `conda install -c anaconda pillow`
   - `pip install tensorflow-object-detection-api`
   
-Set the correct path:
+3. Set the correct path:
   - `export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}`
   
-`make` the project;
+4. `make` the project;
 
-Download `yolo.weights` and `tiny-yolo.weights` by running `wget https://pjreddie.com/media/files/yolo.weights` and `wget https://pjreddie.com/media/files/tiny-yolo-voc.weights`;
+5. Download `yolo.weights` and `tiny-yolo.weights` by running `wget https://pjreddie.com/media/files/yolo.weights` and `wget https://pjreddie.com/media/files/tiny-yolo-voc.weights`;
 
-Copy a video file to the video folder, for example, `input.mp4`;
+6. Copy a video file to the video folder, for example, `input.mp4`;
 
-In the video folder, run `python video2img.py -i input.mp4` and then `python get_pkllist.py`;
+7. In the video folder, run `python video2img.py -i input.mp4` and then `python get_pkllist.py`;
 
-Return to root floder and run `python yolo_seqnms.py` to generate output images in `video/output`;
+8. Return to root floder and run `python yolo_seqnms.py` to generate output images in `video/output`;
 
-If you want to reconstruct a video from these output images, you can go to the video folder and run `python img2video.py -i output`
+9. If you want to reconstruct a video from these output images, you can go to the video folder and run `python img2video.py -i output`
 
 And you will see detection results in `video/output`
 
