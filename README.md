@@ -21,7 +21,7 @@ This project combines **YOLOv2**([reference](https://arxiv.org/abs/1506.02640)) 
       + `COMMON+= -DGPU -I/usr/local/cuda-10.1/include/`
       + `LDFLAGS+= -L/usr/local/cuda-10.1/lib64 -lcuda -lcudart -lcublas –lcurand`
 
-2. From the `img2video.py` file the `cv2.destroyAllWindows()` function is commented as `libgtk2.0-dev` will not be installed.
+2. From the `img2video.py` file in the `video` folder, the `cv2.destroyAllWindows()` function is commented as `libgtk2.0-dev` will not be installed.
 
 ## Steps to execute
 Follow the next steps.
